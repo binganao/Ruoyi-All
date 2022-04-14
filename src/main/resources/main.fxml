@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ruoyi.controller.MainController">
+    <children>
+        <TitledPane animated="false" text="若依配置">
+            <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0">
+                    <children>
+                        <HBox layoutX="76.0" layoutY="29.0" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="5.0">
+                            <children>
+                                <Label text="url">
+                                    <HBox.margin>
+                                        <Insets right="15.0" top="3.0" />
+                                    </HBox.margin>
+                                </Label>
+                                <TextField fx:id="urlText" prefWidth="650.0" HBox.hgrow="ALWAYS" />
+                                <Button fx:id="submitBtn" mnemonicParsing="false" prefWidth="50.0" text="确定">
+                                    <HBox.margin>
+                                        <Insets left="20.0" />
+                                    </HBox.margin>
+                                </Button>
+                            </children>
+                        </HBox>
+                        <HBox layoutX="20.0" layoutY="50.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+                            <children>
+                                <Label text="Cookie">
+                                    <HBox.margin>
+                                        <Insets right="15.0" top="3.0" />
+                                    </HBox.margin>
+                                </Label>
+                                <TextField fx:id="cookieText" prefWidth="690.0" HBox.hgrow="ALWAYS" />
+                            </children>
+                        </HBox>
+                    </children>
+                </AnchorPane>
+            </content>
+        </TitledPane>
+        <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+            <tabs>
+                <Tab fx:id="vulTab" text="漏洞检测">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <TextArea fx:id="vulText" layoutX="29.0" layoutY="26.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="10.0" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab fx:id="snakeyamlTab" text="snakeyaml利用">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <VBox layoutX="20.0" layoutY="17.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="10.0">
+                                    <children>
+                                        <HBox>
+                                            <children>
+                                                <Label prefWidth="120.0" text="请输入远程jar包地址">
+                                                    <HBox.margin>
+                                                        <Insets right="15.0" top="3.0" />
+                                                    </HBox.margin>
+                                                </Label>
+                                                <TextField fx:id="snakeyamlUrlText" prefWidth="550.0" HBox.hgrow="ALWAYS" />
+                                                <Button fx:id="snakeyamlBtn" mnemonicParsing="false" prefWidth="50.0" text="确定">
+                                                    <HBox.margin>
+                                                        <Insets left="20.0" />
+                                                    </HBox.margin>
+                                                </Button>
+                                            </children>
+                                        </HBox>
+                                        <TextArea fx:id="snakeyamlText" prefHeight="350.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                                            <VBox.margin>
+                                                <Insets top="10.0" />
+                                            </VBox.margin>
+                                        </TextArea>
+                                    </children>
+                                </VBox>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab fx:id="jdbcTab" text="jdbcTemplate利用">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <VBox layoutX="20.0" layoutY="17.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="10.0">
+                                    <children>
+                                        <HBox>
+                                            <children>
+                                                <Label prefHeight="15.0" prefWidth="92.0" text="请选择利用方法">
+                                                    <HBox.margin>
+                                                        <Insets right="10.0" top="3.0" />
+                                                    </HBox.margin>
+                                                </Label>
+                                                <ChoiceBox fx:id="jdbcMode" />
+                                                <Label fx:id="jdbcPayloadLabel" prefWidth="130.0" text="请输入{mode}" HBox.hgrow="ALWAYS">
+                                                    <HBox.margin>
+                                                        <Insets left="20.0" right="10.0" top="3.0" />
+                                                    </HBox.margin>
+                                                </Label>
+                                                <TextField fx:id="jdbcSqlText" prefWidth="320.0" HBox.hgrow="ALWAYS" />
+                                                <Button fx:id="jdbcBtn" mnemonicParsing="false" prefWidth="50.0" text="确定">
+                                                    <HBox.margin>
+                                                        <Insets left="20.0" />
+                                                    </HBox.margin>
+                                                </Button>
+                                            </children>
+                                        </HBox>
+                                        <TextArea fx:id="jdbcText" prefHeight="350.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                                            <VBox.margin>
+                                                <Insets top="10.0" />
+                                            </VBox.margin>
+                                        </TextArea>
+                                    </children>
+                                </VBox>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab fx:id="uploadTab" text="不出网利用">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <VBox AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="10.0">
+                           <children>
+                              <HBox>
+                                 <children>
+                                    <Label prefHeight="15.0" prefWidth="142.0" text="请输入修改后的上传路径">
+                                       <HBox.margin>
+                                          <Insets right="15.0" top="3.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <TextField fx:id="uploadPathText" prefWidth="550.0" HBox.hgrow="ALWAYS" />
+                                    <Button fx:id="uploadBtn" mnemonicParsing="false" prefWidth="50.0" text="确定">
+                                       <HBox.margin>
+                                          <Insets left="20.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                              <HBox>
+                                 <children>
+                                    <Label prefHeight="15.0" prefWidth="142.0" text="请选择上传jar包路径">
+                                       <HBox.margin>
+                                          <Insets right="15.0" top="3.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <ComboBox fx:id="jarPathText" editable="true" prefHeight="23.0" prefWidth="600.0" HBox.hgrow="ALWAYS">
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin></ComboBox>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <TextArea fx:id="uploadText" prefHeight="285.0" prefWidth="760.0" VBox.vgrow="ALWAYS">
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </TextArea>
+                           </children>
+                        </VBox>
+                     </children></AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </children>
+</VBox>
